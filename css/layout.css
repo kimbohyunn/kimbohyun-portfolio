@@ -1,0 +1,494 @@
+/* header */
+header{
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 2;
+}
+header .inner{
+    padding: 0 50px;
+    width: 100%; height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1{
+    width: 150px;
+    height: 40px;
+}
+header h1 a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url(../img/logo.jpg);
+}
+header .menu{
+    width: 70px;
+    height: 70px;
+    background-color: var(--black);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+header .menu span{
+    transition : all .4s;
+    position : absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+header .menu .line01{ 
+    top: 23px;  
+}
+header .menu .line02{
+    top: 33px;
+}
+header .menu .line03{
+    bottom: 24px;
+}
+header button{
+    font-family: 'Work Sans', sans-serif;
+    width: 155px;
+    height: 45px;
+    line-height: 40px;
+    font-size: 19px;
+    background-color: transparent;
+    border: none;
+    border: 3px solid var(--black);
+    font-weight: 800;
+    position: relative;
+    cursor: pointer;
+}
+header button::after{
+    content: '';
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.35s ease;
+    background-color: var(--black);
+    z-index: -1;
+}
+header button:hover{
+    color: var(--white);
+}
+header button:hover::after{
+    top: auto;
+    bottom: 0;
+    height: 100%;
+}
+
+/* menu_open */
+.menu_open{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1;
+    background-color: var(--black);
+}
+.menu_open .wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 101px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 150px;
+}
+.menu_open a{
+    position: relative;
+}
+.menu_open a::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: -5%;
+    width: 0;
+    padding-right: 35px;
+    z-index: -1;
+    bottom: 15%;
+    transition: width 0.5s ease-in-out;
+}
+
+header.on h1 a{
+    width: 150px;
+    height: 40px;
+    background-image: url(../img/logo02.jpg);
+}
+header.on button{
+    border: 3px solid var(--white);
+    color: var(--white);
+}
+header.on button::after{
+    background-color: var(--white);
+    z-index: -1;
+}
+header.on button:hover{
+    color: var(--black);
+}
+header.on .menu{
+    background-color: var(--white);
+}
+header.on .menu span{
+    background-color: var(--black);
+}
+header.on .menu .line01{ 
+    transform : translateY(10px) translateX(-14px) rotate(-315deg)
+}
+header.on .menu .line02{
+    opacity: 0;
+}
+header.on .menu .line03{
+    transform : translateY(-10px) translateX(-14px) rotate(315deg)
+}
+
+.menu_open .wrap .work:hover{
+    color: var(--yellow);
+}
+.menu_open .work:hover::before{
+    content: '';
+    background-color: var(--red);
+    width: 100%;
+}
+.menu_open .wrap .intro:hover{
+    color: var(--pink);
+}
+.menu_open .intro:hover::before{
+    content: '';
+    background-color: var(--blue);
+    width: 100%;
+}
+.menu_open .people:hover{
+    color: var(--green);
+}
+.menu_open .people:hover::before{
+    content: '';
+    background-color: var(--yellow);
+    width: 100%;
+}
+
+/* contact */
+.contact{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding-top: 300px;
+}
+.contact .inner{
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 85px 0;
+}
+.contact h2{
+    color: var(--white);
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+.contact .wrap{
+    display: flex;
+}
+.contact .wrap .name{
+    width: 15%;
+}
+.contact .wrap .mail{
+    width: 15%;
+}
+.contact .wrap h3{
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 800;
+}
+.contact .wrap p, .contact .wrap a{
+    font-size: 22px;
+    color: var(--yellow);
+}
+header.on button{
+    visibility: hidden;
+}
+
+
+/* footer */
+footer{
+    background-color: var(--black);
+    color: var(--white);
+    position: relative;
+}
+footer .inner{
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 85px 0;
+}
+footer .inner h2{
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+footer .inner .wrap{
+    display: flex;
+}
+footer .inner .wrap .name{
+    width: 15%;
+}
+footer .inner .wrap .mail{
+    width: 15%;
+}
+footer .inner .wrap h3{
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 800;
+}
+footer .inner .wrap p, footer .inner .wrap a{
+    font-size: 22px;
+    color: var(--yellow);
+}
+footer .inner .copy{
+    font-size: 16px;
+    position: absolute;
+    bottom: 40px;
+    right: 200px;
+}
+
+/* cursor */
+.cursor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #f00;
+    border-radius: 50%;
+    z-index: 10;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+.cursor.blue{
+    background-color: #000;
+}
+.cursor.hov{
+    width: 150px;
+    height: 100px;
+    border-radius: 0;
+    mix-blend-mode: normal;
+    background-position: center;
+    background-size: cover;
+}
+
+/*=========================== large desktop ==================================*/
+@media screen and (max-width: 1520px){
+    .contact .inner{
+        max-width: 100%;
+        padding: 85px 20px;
+    }
+    footer .inner{
+        max-width: 100%;
+        margin: 0;
+        padding: 50px 20px;
+    }
+}
+
+
+/*=========================== tablet ==================================*/
+@media screen and (max-width: 1023px){
+    /* header */
+    header{
+        width: 100%;
+    }
+    header .inner{
+        padding: 0 20px;
+    }
+    
+    /* footer */
+    footer .inner{
+        width: 100%;
+        margin: 0;
+        padding: 50px 20px;
+    }
+    footer .inner .wrap{
+        margin-bottom: 20px;
+    }
+    footer .inner .wrap .name{
+        width: 30%;
+        margin-bottom: 15px;
+    }
+    footer .inner .wrap .mail{
+        width: 30%;
+    }
+    footer .inner .wrap h3{
+        margin-bottom: 5px;
+    }
+    footer .copy{
+        bottom: 20px;
+        left: 20px;
+    }
+
+
+
+}
+
+
+
+/*=========================== mobile ================================*/
+@media screen and (max-width: 767px){
+    /* header */
+    header h1{
+        width: 106px;
+        height: 28px;
+    }
+    header h1 a{
+        background-size: contain;
+    }
+    header .menu{
+        width: 45px;
+        height: 45px;
+        background-color: var(--black);
+        border-radius: 50px;
+        position: relative;
+    }
+    header .menu span{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background-color: var(--white);
+        border-radius: 4px;
+    }
+    header .menu .line01{ 
+        top: 14px;  
+    }
+    header .menu .line02{
+        top: 21px;
+    }
+    header .menu .line03{
+        bottom: 15px;
+    }
+    header button{
+        width: 98px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid var(--black);
+    }
+    header button:hover{
+        color: var(--black);
+    }
+    header button::after{
+        content: none;
+    }
+
+    .menu_open .wrap{
+        font-size: 60px;
+        line-height: 100px;
+    }
+    header.on h1 a{
+        width: 106px;
+        height: 28px;
+        background-image: url(../img/logo02.jpg);
+    }
+    header.on button{
+        
+        border: 3px solid var(--white);
+        color: var(--white);
+    }
+    header.on .menu .line01{ 
+        transform : translateY(7px) translateX(-10px) rotate(-315deg)
+    }
+    header.on .menu .line03{
+        transform : translateY(-7px) translateX(-10px) rotate(315deg)
+    }
+    header.on button{
+        width: 98px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid var(--white);
+    }
+    header.on button:hover{
+        color: var(--white);
+    }
+    header.on button::after{
+        content: none;
+    }
+    .contact{
+        padding-top: 170px;
+    }
+    .contact h2{
+        font-size: 50px;
+    }
+    .contact .wrap .name{
+        width: 40%;
+    }
+    .contact .wrap .mail{
+        width: 60%;
+    }
+    .contact .wrap p, .contact .wrap a{
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+
+    /* footer */
+    footer .inner h2{
+        font-size: 44px;
+    }
+    footer .inner .wrap{
+        margin-bottom: 20px;
+    }
+    footer .inner .wrap .name{
+        width: 40%;
+        margin-bottom: 15px;
+    }
+    footer .inner .wrap .mail{
+        width: 50%;
+    }
+    footer .inner .wrap h3{
+        margin-bottom: 5px;
+    }
+    footer .copy{
+        bottom: 20px;
+        left: 20px;
+    }
+    footer .inner .wrap h3{
+        margin-bottom: 15px;
+        font-size: 22px;
+        font-weight: 800;
+    }
+    footer .inner .wrap p, footer .inner .wrap a{
+        font-size: 15px;
+        color: var(--yellow);
+        display: inline-block;
+    }
+    footer .inner .copy{
+        font-size: 12px;
+        width: 70%;
+        line-height: 15px;
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .cursor.hov{
+        display: none;
+    }
+}

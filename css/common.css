@@ -1,0 +1,51 @@
+@import 'reset.css';
+@import 'layout.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+body{
+    font-family: 'Work Sans', sans-serif;
+    color: #010101;
+    font-size: 22px;
+    letter-spacing: -0.7px;
+    background-color: #fff;
+}
+:root {
+    --black: #010101;
+    --yellow: #ffc100;
+    --blue: #004eff;
+    --green: #00813f;
+    --red: #ff4b00;
+    --pink: #ffcde1;
+    --white: #fff;
+}
+.scroll_h{
+    overflow: hidden;
+}
+.blind{
+    width: 1px; height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    position: absolute;
+}
+.under{
+    position: relative;
+}
+.under::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0; 
+    height: 4px;
+    background-color: #000;
+    transition: 0.2s;
+}
+.under:hover::after{
+    width: 100%;
+}
+::selection{
+    background-color: #ffcde1;
+    color: #010101;
+}
